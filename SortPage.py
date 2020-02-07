@@ -310,9 +310,16 @@ class Main():
     print('\nCreated a copy of the original dataset using list() called newarray100,\n so that the ' +
           'dataset of random numbers cannot be changed upon repeat:\n\n', newArray100)
 
-    # Sorting the new array with
+    # Sorting the new array with Pysort package Merge Sort
     newmergeSort100 = sortObj.mergeSort(newArray100)
-    print('\nUsing the Pysort package to Merge Sort the newarray100 list:\n\n', newmergeSort100)
+    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
+          endColor + 'the newarray100 list:\n\n', newmergeSort100)
+
+    # Sorting the new array with Pysort package Quick Sort (using the indexes as the low and high pivots
+    # in the parameters
+    newmergeSort100 = sortObj.quickSort(newArray100, 0, 99)
+    print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 100 numbers ' +
+          endColor + 'the newarray100 list:\n\n', newmergeSort100)
 
 
 Main()
