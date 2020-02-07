@@ -14,6 +14,7 @@ import random
 import time
 import numpy as np
 from sorting_techniques import pysort
+import copy
 
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
@@ -275,10 +276,6 @@ class Main():
     array100 = np.array(random.sample(range(1, 101), 100))
     print(startBlue + 'Entering 100 numbers into the doubly linked list:\n' + endColor, array100, '\n')
 
-    # Ensuring the list remains the same, by creating a new variable using the list.copy method build into python
-    # reference: https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
-    copiedArray100 = array100.copy()
-
     # 1,000 random numbers
     array1_000 = np.array(random.sample(range(1, 1001), 1000))
     print(startBlue + 'Entering 1,000 numbers into the doubly linked list:\n' + endColor, array1_000, '\n')
@@ -305,20 +302,28 @@ class Main():
     print(startGreen + '------------------------------------------------------------' +
           startBold + ' Merge Sort ' + '------------------------------------------------------------' + endColor)
 
+    print('Original dataset:\n', array100)
+
+    # Ensuring the list remains the same, by creating a new variable using the list.copy method build into python
+    # reference: https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
+    copiedArray100 = array100.copy()
+    print('Attempt to copy original dataset using .copy():\n', copiedArray100)
+
     # Genearting the Sort Result
     mergeSort100 = sortObj.mergeSort(copiedArray100)
+    print('Merge Sort of original dataset using .copy():\n', mergeSort100)
 
-    # The SortResult contains the Sorted List
 
-    print(mergeSort100)
-
-    print(array100)
-    print(copiedArray100)
     newarray100 = list(array100)
-    print(newarray100)
+    print('Another attempt to copy original dataset using list()\n:', newarray100)
+
     newmergeSort100 = sortObj.mergeSort(newarray100)
+    print('An attempt to merge sort the list() copied data using py.copy:\n', newarray100)
 
     # it appears the method of newarray100 was the best way to actually copy array100, but for some
     # reason py.copy appears to not be sorting the list properly
+
+    # it appears the final list() method to copy the random dataset, and then sorting worked.  Without
+    # using list() and creating a new variable, it appeared the random numbers would change
 
 Main()
