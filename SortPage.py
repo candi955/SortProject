@@ -14,8 +14,15 @@ import random
 import time
 import numpy as np
 from sorting_techniques import pysort
-import copy
-
+# in order to utilize the installed timsort, uploaded the 'require' package to use in the code
+import require
+# Appears bower deprecated for timsort install, had started with bower; switching to npm install
+# references: https://www.jetbrains.com/help/pycharm/using-bower-package-manager.html
+# https://libraries.io/bower/timsort
+# In Pycharm IDE terminal:
+# pip install npm
+# npm install --save timsort
+# npm install timsort
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
@@ -298,9 +305,10 @@ class Main():
     sortObj = pysort.Sorting()
 
     #-------------------------------------------------------------------------------------------------------------
-    # Starting the Phase1, Merge Sort
+    # Sorting and timing sort duration of 100 random numbers
     print(startGreen + '------------------------------------------------------------' +
-          startBold + ' Merge Sort ' + '------------------------------------------------------------' + endColor)
+          startBold + ' Sorting and timing sort duration of 100 random numbers ' +
+          '------------------------------------------------------------' + endColor)
 
     print('\nOriginal dataset:\n', array100)
 
@@ -325,6 +333,40 @@ class Main():
     newmergeSort100 = sortObj.quickSort(newArray100, 0, 99)
     print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 100 numbers ' +
           endColor + 'the newarray100 list:\n\n', newmergeSort100)
+
+    # Sorting the new array using the Timsort algorithm, as referenced from the Timsort author's page
+    # The author's explanation quoted:
+    #
+    # -----"In a nutshell, the main routine marches over the array once, left to right,
+    # alternately identifying the next run, then merging it into the previous
+    # runs "intelligently".  Everything else is complication for speed, and some
+    # hard-won measure of memory efficiency.-----
+    # reference: https://github.com/python/cpython/blob/master/Objects/listsort.txt
+
+    # To install Timsort in Pycharm IDE, installed in terminal:
+    # npm install -g bower
+    # bower install --save timsort
+    # Appears bower deprecated; switching to npm install
+    # references: https://www.jetbrains.com/help/pycharm/using-bower-package-manager.html
+    # https://libraries.io/bower/timsort
+    # In Pycharm IDE terminal:
+    # pip install npm
+    # npm install --save timsort
+    # npm install timsort
+    # in order to utilize the installed timsort, uploaded the 'require' package to use in the code
+    # import require, shown at top of program
+
+    # Python sort() method utilizes the Timsort algorithm:
+    # references: https://www.quora.com/Which-sorting-algorithm-is-used-by-Python-in-the-sort-method
+    # https://stackoverflow.com/questions/10948920/what-algorithm-does-pythons-sorted-use
+    #
+
+    timSort100 = sorted(newArray100, reverse=False)
+    print('\nTimsort 100 numbers in order:\n', timSort100)
+
+    timSort100 = sorted(newArray100, reverse=True)
+    print('\nTimsort 100 numbers in reverse:\n', timSort100)
+
 
 
 Main()
