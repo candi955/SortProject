@@ -294,163 +294,53 @@ class Main():
 
     sortObj = pysort.Sorting()
 
-    #-------------------------------------------------------------------------------------------------------------
-    # Sorting and timing sort duration of 100 random numbers
+    # -------------------------------------------------------------------------------------------------------------
+    # Sorting and timing sort duration of 100,000 random numbers
+    # All references for the processes utilized are shown on the sorting 100 numbers section of Sortpage.py
     print(startGreen + '------------------------------------------------------------' +
-          startBold + ' Sorting and timing sort duration of 100 random numbers ' +
+          startBold + ' Sorting and timing sort duration of 100,000 random numbers ' +
           '------------------------------------------------------------' + endColor)
 
-    print('\nOriginal dataset:\n', array100)
+    print('\nOriginal dataset:\n', array100_000)
 
-    # Creating a copy (variable newarray100) of the original array list, with the python list() constructor, so that
-    # the array of random numbers does not create a whole new list
-    # references: https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
-    # https://www.programiz.com/python-programming/methods/built-in/list
+    newArray100000 = list(array100_000)
+    print('\nCreated a copy of the original dataset using list() called newarray100000,\n so that the ' +
+          'dataset of random numbers cannot be changed upon repeat:\n\n', newArray100000)
 
-    # also setting variables to time the duration of each functionality (time.time())
+    startMerge100000 = time.time()
+    newmergeSort100000 = sortObj.mergeSort(newArray100000)
+    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100,000 numbers ' +
+          endColor + 'the newarray100000 list:\n\n', newmergeSort100000)
+    endMerge100000 = time.time()
+    durationMerge100000 = endMerge100000 - startMerge100000
 
-    newArray100 = list(array100)
-    print('\nCreated a copy of the original dataset using list() called newarray100,\n so that the ' +
-          'dataset of random numbers cannot be changed upon repeat:\n\n', newArray100)
-
-    # Sorting the new array with Pysort package Merge Sort
-    # reference: https://pypi.org/project/pysort/
-    startMerge100 = time.time()
-    newmergeSort100 = sortObj.mergeSort(newArray100)
-    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
-          endColor + 'the newarray100 list:\n\n', newmergeSort100)
-    endMerge100 = time.time()
-    durationMerge100 = endMerge100 - startMerge100
-
-    # Sorting the new array with Pysort package Quick Sort (using the indexes as the low and high pivots
-    # in the parameters
-    # references: https://pypi.org/project/pysort/
-    # https://www.geeksforgeeks.org/quick-sort/
-    startQuick100 = time.time()
-    newmergeSort100 = sortObj.quickSort(newArray100, 0, 99)
-    print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 100 numbers ' +
-          endColor + 'the newarray100 list:\n\n', newmergeSort100)
-    endQuick100 = time.time()
-    durationQuick100 = endQuick100 - startQuick100
-
-    # Sorting the new array using the Timsort algorithm, as referenced from the Timsort author's page
-    # The author's explanation quoted:
-    #
-    # -----"In a nutshell, the main routine marches over the array once, left to right,
-    # alternately identifying the next run, then merging it into the previous
-    # runs "intelligently".  Everything else is complication for speed, and some
-    # hard-won measure of memory efficiency.-----
-    # reference: https://github.com/python/cpython/blob/master/Objects/listsort.txt
-    #
-    # Python sort() method utilizes the Timsort algorithm:
-    # references: https://www.quora.com/Which-sorting-algorithm-is-used-by-Python-in-the-sort-method
-    # https://stackoverflow.com/questions/10948920/what-algorithm-does-pythons-sorted-use
-    # https://www.programiz.com/python-programming/methods/list/sort
-
-    startTim100 = time.time()
-    timSort100 = sorted(newArray100, reverse=False)
-    print(startPurple + startBold + '\nTimsort 100 numbers in order:\n' + endColor, timSort100)
-    endTim100 = time.time()
-    durationTim100 = endTim100 - startTim100
-
-    timSort100 = sorted(newArray100, reverse=True)
-    print(startPurple + startBold + '\nTimsort 100 numbers in reverse:\n' + endColor, timSort100)
-
-    # Repeating these processes (same processes and references), for one-thousand, ten-thousand, and one-hundred
-    # thousand random numbers
-
-    #-------------------------------------------------------------------------------------------------------------
-    # Sorting and timing sort duration of 1,000 random numbers
-    print(startGreen + '------------------------------------------------------------' +
-          startBold + ' Sorting and timing sort duration of 1,000 random numbers ' +
-          '------------------------------------------------------------' + endColor)
-
-    print('\nOriginal dataset:\n', array1_000)
-
-    newArray1000 = list(array1_000)
-    print('\nCreated a copy of the original dataset using list() called newarray1000,\n so that the ' +
-          'dataset of random numbers cannot be changed upon repeat:\n\n', newArray1000)
-
-    startMerge1000 = time.time()
-    newmergeSort1000 = sortObj.mergeSort(newArray1000)
-    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 1,000 numbers ' +
-          endColor + 'the newarray1000 list:\n\n', newmergeSort1000)
-    endMerge1000 = time.time()
-    durationMerge1000 = endMerge1000 - startMerge1000
-
-    startQuick1000 = time.time()
+    startQuick100000 = time.time()
     # Error showed high pivot as 991, highest recursion allowed without error was 994
-    newmergeSort1000 = sortObj.quickSort(newArray1000, 0, 994)
-    print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 1,000 numbers ' +
-          endColor + 'the newarray1000 list:\n\n', newmergeSort1000)
-    endQuick1000 = time.time()
-    durationQuick1000 = endQuick1000 - startQuick1000
+    newmergeSort100000 = sortObj.quickSort(newArray100000, 0, 994)
+    print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 100,000 numbers ' +
+          endColor + 'the newarray100000 list:\n\n', newmergeSort100000)
+    endQuick100000 = time.time()
+    durationQuick100000 = endQuick100000 - startQuick100000
 
-    startTim1000 = time.time()
-    timSort1000 = sorted(newArray1000, reverse=False)
-    print(startPurple + startBold + '\nTimsort 1000 numbers in order:\n' + endColor, timSort1000)
-    endTim1000 = time.time()
-    durationTim1000 = endTim1000 - startTim1000
+    startTim100000 = time.time()
+    timSort100000 = sorted(newArray100000, reverse=False)
+    print(startPurple + startBold + '\nTimsort 100,000 numbers in order:\n' + endColor, timSort100000)
+    endTim100000 = time.time()
+    durationTim100000 = endTim100000 - startTim100000
 
-    timSort1000 = sorted(newArray1000, reverse=True)
-    print(startPurple + startBold + '\nTimsort 1,000 numbers in reverse:\n' + endColor, timSort1000)
+    timSort100000 = sorted(newArray100000, reverse=True)
+    print(startPurple + startBold + '\nTimsort 100,000 numbers in reverse:\n' + endColor, timSort100000)
 
-    #-------------------------------------------------------------------------------------------------------------
-    # Sorting and timing sort duration of 10,000 random numbers
-    print(startGreen + '------------------------------------------------------------' +
-          startBold + ' Sorting and timing sort duration of 10,000 random numbers ' +
-          '------------------------------------------------------------' + endColor)
-
-    print('\nOriginal dataset:\n', array10_000)
-
-    newArray10000 = list(array10_000)
-    print('\nCreated a copy of the original dataset using list() called newarray10000,\n so that the ' +
-          'dataset of random numbers cannot be changed upon repeat:\n\n', newArray10000)
-
-    startMerge10000 = time.time()
-    newmergeSort10000 = sortObj.mergeSort(newArray10000)
-    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 10,000 numbers ' +
-          endColor + 'the newarray10000 list:\n\n', newmergeSort10000)
-    endMerge10000 = time.time()
-    durationMerge10000 = endMerge10000 - startMerge10000
-
-    startQuick10000 = time.time()
-    # Error showed high pivot as 991, highest recursion allowed without error was 994
-    newmergeSort10000 = sortObj.quickSort(newArray10000, 0, 994)
-    print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 10,000 numbers ' +
-          endColor + 'the newarray10000 list:\n\n', newmergeSort10000)
-    endQuick10000 = time.time()
-    durationQuick10000 = endQuick10000 - startQuick10000
-
-    startTim10000 = time.time()
-    timSort10000 = sorted(newArray10000, reverse=False)
-    print(startPurple + startBold + '\nTimsort 10,000 numbers in order:\n' + endColor, timSort10000)
-    endTim10000 = time.time()
-    durationTim10000 = endTim10000 - startTim10000
-
-    timSort10000 = sorted(newArray10000, reverse=True)
-    print(startPurple + startBold + '\nTimsort 10,000 numbers in reverse:\n' + endColor, timSort10000)
-
-
-    #-------------------------------------------------------------------------------------------------------------
-    # Showing the various time durations in seconds of the sort functionality
-    # Due to issue of not showing all results, the 100,000 number durations are shown on SortPage100_000Nums.py
-    # within this program
+    # -------------------------------------------------------------------------------------------------------------
+    # Showing the time durations in seconds of the sort functionality for 100,000 numbers
     print(startPurple + '------------------------------------------------------------' +
-          startBold + ' Showing the various time durations in seconds of the sort functionality ' +
+          startBold + ' Showing the various time durations in seconds of the sort functionality for 100,000 numbers ' +
           '------------------------------------------------------------' + endColor)
 
 
-    print(startBlue + '\nMerge Sort 100 numbers time duration in seconds: ' + endColor, durationMerge100)
-    print(startBlue + 'Quick Sort 100 numbers time duration in seconds: ' + endColor, durationQuick100)
-    print(startBlue + 'Timsort 100 numbers time duration in seconds: ' + endColor, durationTim100)
+    print(startDarkCyan + '\nMerge Sort 100,000 numbers time duration in seconds: ' + endColor, durationMerge100000)
+    print(startDarkCyan + 'Quick Sort 100,000 numbers time duration in seconds: ' + endColor, durationQuick100000)
+    print(startDarkCyan + 'Timsort 100,000 numbers time duration in seconds: ' + endColor, durationTim100000)
 
-    print(startGreen + '\nMerge Sort 1,000 numbers time duration in seconds: ' + endColor, durationMerge1000)
-    print(startGreen + 'Quick Sort 1,000 numbers time duration in seconds: ' + endColor, durationQuick1000)
-    print(startGreen + 'Timsort 1,000 numbers time duration in seconds: ' + endColor, durationTim1000)
-
-    print(startCyan + '\nMerge Sort 10,000 numbers time duration in seconds: ' + endColor, durationMerge10000)
-    print(startCyan + 'Quick Sort 10,000 numbers time duration in seconds: ' + endColor, durationQuick10000)
-    print(startCyan + 'Timsort 10,000 numbers time duration in seconds: ' + endColor, durationTim10000)
 
 Main()
