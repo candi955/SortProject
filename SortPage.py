@@ -1,4 +1,6 @@
-# For the course MS549 Data Structures and Testing, this is Phase 1, implementing MergeSort on a linked list.
+# For the course MS549 Data Structures and Testing, this is Phases 1-5, implementing Merge Sort, Quick Sort
+# and Timsort on doubly linked list sets of one-hundred, one-thousand, ten-thousand, and one hundred-thousand
+# random numbers.
 
 # References I'm starting with:
 # https://stackoverflow.com/questions/18761766/mergesort-with-python
