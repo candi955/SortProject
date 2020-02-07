@@ -306,17 +306,22 @@ class Main():
 
     # Creating a copy (variable newarray100) of the original array list, with the python list() constructor, so that
     # the array of random numbers does not create a whole new list
+    # references: https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
+    # https://www.programiz.com/python-programming/methods/built-in/list
     newArray100 = list(array100)
     print('\nCreated a copy of the original dataset using list() called newarray100,\n so that the ' +
           'dataset of random numbers cannot be changed upon repeat:\n\n', newArray100)
 
     # Sorting the new array with Pysort package Merge Sort
+    # reference: https://pypi.org/project/pysort/
     newmergeSort100 = sortObj.mergeSort(newArray100)
     print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
           endColor + 'the newarray100 list:\n\n', newmergeSort100)
 
     # Sorting the new array with Pysort package Quick Sort (using the indexes as the low and high pivots
     # in the parameters
+    # references: https://pypi.org/project/pysort/
+    # https://www.geeksforgeeks.org/quick-sort/
     newmergeSort100 = sortObj.quickSort(newArray100, 0, 99)
     print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 100 numbers ' +
           endColor + 'the newarray100 list:\n\n', newmergeSort100)
