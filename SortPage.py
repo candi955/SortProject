@@ -302,16 +302,7 @@ class Main():
     print(startGreen + '------------------------------------------------------------' +
           startBold + ' Merge Sort ' + '------------------------------------------------------------' + endColor)
 
-    print('Original dataset:\n', array100)
-
-    # Ensuring the list remains the same, by creating a new variable using the list.copy method build into python
-    # reference: https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
-    copiedArray100 = array100.copy()
-    print('Attempt to copy original dataset using .copy():\n', copiedArray100)
-
-    # Genearting the Sort Result
-    mergeSort100 = sortObj.mergeSort(copiedArray100)
-    print('Merge Sort of original dataset using .copy():\n', mergeSort100)
+    print('\nOriginal dataset:\n', array100)
 
     # Creating a copy (variable newarray100) of the original array list, with the python list() constructor, so that
     # the array of random numbers does not create a whole new list
@@ -323,10 +314,5 @@ class Main():
     newmergeSort100 = sortObj.mergeSort(newArray100)
     print('\nUsing the Pysort package to Merge Sort the newarray100 list:\n\n', newmergeSort100)
 
-    # it appears the method of newarray100 was the best way to actually copy array100, but for some
-    # reason py.copy appears to not be sorting the list properly
-
-    # it appears the final list() method to copy the random dataset, and then sorting worked.  Without
-    # using list() and creating a new variable, it appeared the random numbers would change
 
 Main()
