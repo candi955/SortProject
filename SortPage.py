@@ -313,12 +313,15 @@ class Main():
     mergeSort100 = sortObj.mergeSort(copiedArray100)
     print('Merge Sort of original dataset using .copy():\n', mergeSort100)
 
+    # Creating a copy (variable newarray100) of the original array list, with the python list() constructor, so that
+    # the array of random numbers does not create a whole new list
+    newArray100 = list(array100)
+    print('\nCreated a copy of the original dataset using list() called newarray100,\n so that the ' +
+          'dataset of random numbers cannot be changed upon repeat:\n\n', newArray100)
 
-    newarray100 = list(array100)
-    print('Another attempt to copy original dataset using list()\n:', newarray100)
-
-    newmergeSort100 = sortObj.mergeSort(newarray100)
-    print('An attempt to merge sort the list() copied data using py.copy:\n', newarray100)
+    # Sorting the new array with
+    newmergeSort100 = sortObj.mergeSort(newArray100)
+    print('\nUsing the Pysort package to Merge Sort the newarray100 list:\n\n', newmergeSort100)
 
     # it appears the method of newarray100 was the best way to actually copy array100, but for some
     # reason py.copy appears to not be sorting the list properly
