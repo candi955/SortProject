@@ -2,9 +2,8 @@
 
 # Pandas table and Matplotlib line plot
 
-# Comparing time durations of the Hash/Salt functions insertion and deletion using the hashlib python library in chart
-# form.  These numbers will be compared to similar numbers with previous projects concerning arrays and linked lists.
-# The time durations of a hundred, thousand, ten-thousand, and hundred-thousand random numbers will be compared.
+# Comparing time durations of the Merge Sort, Quick Sort, and Timsort functions in python for 100, 1000, 10000, and
+# 100000 random numbers.
 
 # Main reference for the Matplotlip plot on this page:
 # https://matplotlib.org/gallery/lines_bars_and_markers/categorical_variables.html#sphx-glr-gallery-lines-bars-and-markers-categorical-variables-py
@@ -18,7 +17,6 @@ import numpy as np
 import xlrd
 import pandas as pd
 import matplotlib.pyplot as plt
-
 
 # Creating a variable for data being pulled from the TimeDurationComparison.xlsx file and placed into array format
 book = xlrd.open_workbook('TimeDurationComparison.xlsx')
@@ -56,22 +54,17 @@ class Regression():
         ###data = timeduration_df.iloc[0:8, 1:4]
         print("------- Splitting the dataframe into sections -------\n\nThe data of the dataframe:\n\n", data, "\n")
 
-        # 1st data column, the Array column
-        arrayVectorData = timeduration_df.iloc[:, 1]
-        print("Array column: \n", arrayVectorData, "\n")
+        # 1st data column, the Merge Sort column
+        mergeSortData = timeduration_df.iloc[:, 1]
+        print("Mergesort column: \n", mergeSortData, "\n")
 
-        # 2nd data column, the DoublyLinkedList column
-        DblData = timeduration_df.iloc[:, 2]
-        print("Doubly Linked List column: \n", DblData, "\n")
+        # 2nd data column, the Quick Sort column
+        quickSortData = timeduration_df.iloc[:, 2]
+        print("Quicksort column: \n", quickSortData, "\n")
 
-        # 3rd data column, the Binary Tree column
-        BinData = timeduration_df.iloc[:, 3]
-        print("Binary Tree column: \n", BinData, "\n")
-
-        # 4th data column, the Hash/Salt column
-        HashData = timeduration_df.iloc[:, 4]
-        print("Hash/Salt column: \n", HashData, "\n")
-
+        # 3rd data column, the Tim Sort column
+        timSortData = timeduration_df.iloc[:, 3]
+        print("Timsort column: \n", timSortData, "\n")
 
         # This is the iloc to show the entire first column, the row labels, of the dataframe, for the label column
         rowLabels_ForData = timeduration_df.iloc[:, 0]
@@ -92,17 +85,18 @@ class Regression():
 
         fig, ax = plt.subplots()
 
-        ax.plot(rowLabels_ForData, arrayVectorData, label="Array")
-        ax.plot(rowLabels_ForData, DblData, label="DblLinked")
-        ax.plot(rowLabels_ForData, BinData, label="BST")
-        ax.plot(rowLabels_ForData, HashData, label="Hash/Salt")
+        ax.plot(rowLabels_ForData, mergeSortData, label="Merge Sort")
+        ax.plot(rowLabels_ForData, quickSortData, label="Quick Sort")
+        ax.plot(rowLabels_ForData, timSortData, label="Timsort")
         ax.legend()
+
         # x and y axis labels
-        plt.xlabel("Insertions and Deletions by Random Number\n")
+        plt.xlabel("Number of Random Numbers Sorted\n")
         plt.ylabel("Amount of Time Duration in Seconds\n")
+
         # The top title (suptitle) and title descriptor(title)
-        plt.suptitle("Duration in Seconds of Insertion and Deletion Functionality in Python")
-        plt.title("\nArrays, Doubly Linked Lists, Binary Search Trees, and Hash/Salt Tables")
+        plt.suptitle("Duration in Seconds of Sort Functionality in Python")
+        plt.title("\nMerge Sort, Quick Sort, and Timsort")
 
         plt.show()
 
