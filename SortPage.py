@@ -356,6 +356,117 @@ class Main():
     timSort100 = sorted(newArray100, reverse=True)
     print(startPurple + startBold + '\nTimsort 100 numbers in reverse:\n' + endColor, timSort100)
 
+    # Repeating these processes (same processes and references), for one-thousand, ten-thousand, and one-hundred
+    # thousand random numbers
+
+    #-------------------------------------------------------------------------------------------------------------
+    # Sorting and timing sort duration of 1,000 random numbers
+    print(startGreen + '------------------------------------------------------------' +
+          startBold + ' Sorting and timing sort duration of 1,000 random numbers ' +
+          '------------------------------------------------------------' + endColor)
+
+    print('\nOriginal dataset:\n', array1_000)
+
+    newArray1000 = list(array1_000)
+    print('\nCreated a copy of the original dataset using list() called newarray1000,\n so that the ' +
+          'dataset of random numbers cannot be changed upon repeat:\n\n', newArray1000)
+
+    startMerge1000 = time.time()
+    newmergeSort1000 = sortObj.mergeSort(newArray1000)
+    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 1,000 numbers ' +
+          endColor + 'the newarray1000 list:\n\n', newmergeSort1000)
+    endMerge1000 = time.time()
+    durationMerge1000 = endMerge1000 - startMerge1000
+
+    startQuick1000 = time.time()
+    # Error showed high pivot as 991, highest recursion allowed without error was 994
+    newmergeSort1000 = sortObj.quickSort(newArray1000, 0, 994)
+    print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 1,000 numbers ' +
+          endColor + 'the newarray1000 list:\n\n', newmergeSort1000)
+    endQuick1000 = time.time()
+    durationQuick1000 = endQuick1000 - startQuick1000
+
+    startTim1000 = time.time()
+    timSort1000 = sorted(newArray1000, reverse=False)
+    print(startPurple + startBold + '\nTimsort 1000 numbers in order:\n' + endColor, timSort1000)
+    endTim1000 = time.time()
+    durationTim1000 = endTim1000 - startTim1000
+
+    timSort1000 = sorted(newArray1000, reverse=True)
+    print(startPurple + startBold + '\nTimsort 1,000 numbers in reverse:\n' + endColor, timSort1000)
+
+    #-------------------------------------------------------------------------------------------------------------
+    # Sorting and timing sort duration of 10,000 random numbers
+    print(startGreen + '------------------------------------------------------------' +
+          startBold + ' Sorting and timing sort duration of 10,000 random numbers ' +
+          '------------------------------------------------------------' + endColor)
+
+    print('\nOriginal dataset:\n', array10_000)
+
+    newArray10000 = list(array10_000)
+    print('\nCreated a copy of the original dataset using list() called newarray10000,\n so that the ' +
+          'dataset of random numbers cannot be changed upon repeat:\n\n', newArray10000)
+
+    startMerge10000 = time.time()
+    newmergeSort10000 = sortObj.mergeSort(newArray10000)
+    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 10,000 numbers ' +
+          endColor + 'the newarray10000 list:\n\n', newmergeSort10000)
+    endMerge10000 = time.time()
+    durationMerge10000 = endMerge10000 - startMerge10000
+
+    startQuick10000 = time.time()
+    # Error showed high pivot as 991, highest recursion allowed without error was 994
+    newmergeSort10000 = sortObj.quickSort(newArray10000, 0, 994)
+    print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 10,000 numbers ' +
+          endColor + 'the newarray10000 list:\n\n', newmergeSort10000)
+    endQuick10000 = time.time()
+    durationQuick10000 = endQuick10000 - startQuick10000
+
+    startTim10000 = time.time()
+    timSort10000 = sorted(newArray10000, reverse=False)
+    print(startPurple + startBold + '\nTimsort 10,000 numbers in order:\n' + endColor, timSort10000)
+    endTim10000 = time.time()
+    durationTim10000 = endTim10000 - startTim10000
+
+    timSort10000 = sorted(newArray10000, reverse=True)
+    print(startPurple + startBold + '\nTimsort 10,000 numbers in reverse:\n' + endColor, timSort10000)
+
+    #-------------------------------------------------------------------------------------------------------------
+    # Sorting and timing sort duration of 100,000 random numbers
+    print(startGreen + '------------------------------------------------------------' +
+          startBold + ' Sorting and timing sort duration of 100,000 random numbers ' +
+          '------------------------------------------------------------' + endColor)
+
+    print('\nOriginal dataset:\n', array100_000)
+
+    newArray100000 = list(array100_000)
+    print('\nCreated a copy of the original dataset using list() called newarray100000,\n so that the ' +
+          'dataset of random numbers cannot be changed upon repeat:\n\n', newArray100000)
+
+    startMerge100000 = time.time()
+    newmergeSort100000 = sortObj.mergeSort(newArray100000)
+    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100,000 numbers ' +
+          endColor + 'the newarray100000 list:\n\n', newmergeSort100000)
+    endMerge100000 = time.time()
+    durationMerge100000 = endMerge100000 - startMerge100000
+
+    startQuick100000 = time.time()
+    # Error showed high pivot as 991, highest recursion allowed without error was 994
+    newmergeSort100000 = sortObj.quickSort(newArray100000, 0, 994)
+    print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 100,000 numbers ' +
+          endColor + 'the newarray100000 list:\n\n', newmergeSort100000)
+    endQuick100000 = time.time()
+    durationQuick100000 = endQuick100000 - startQuick100000
+
+    startTim100000 = time.time()
+    timSort100000 = sorted(newArray100000, reverse=False)
+    print(startPurple + startBold + '\nTimsort 100,000 numbers in order:\n' + endColor, timSort100000)
+    endTim100000 = time.time()
+    durationTim100000 = endTim100000 - startTim100000
+
+    timSort100000 = sorted(newArray100000, reverse=True)
+    print(startPurple + startBold + '\nTimsort 100,000 numbers in reverse:\n' + endColor, timSort100000)
+
     #-------------------------------------------------------------------------------------------------------------
     # Showing the various time durations in seconds of the sort functionality
     print(startPurple + '------------------------------------------------------------' +
@@ -366,5 +477,17 @@ class Main():
     print(startBlue + '\nMerge Sort 100 numbers time duration in seconds: ' + endColor, durationMerge100)
     print(startBlue + 'Quick Sort 100 numbers time duration in seconds: ' + endColor, durationQuick100)
     print(startBlue + 'Timsort 100 numbers time duration in seconds: ' + endColor, durationTim100)
+
+    print(startGreen + '\nMerge Sort 1,000 numbers time duration in seconds: ' + endColor, durationMerge1000)
+    print(startGreen + 'Quick Sort 1,000 numbers time duration in seconds: ' + endColor, durationQuick1000)
+    print(startGreen + 'Timsort 1,000 numbers time duration in seconds: ' + endColor, durationTim1000)
+
+    print(startCyan + '\nMerge Sort 10,000 numbers time duration in seconds: ' + endColor, durationMerge10000)
+    print(startCyan + 'Quick Sort 10,000 numbers time duration in seconds: ' + endColor, durationQuick10000)
+    print(startCyan + 'Timsort 10,000 numbers time duration in seconds: ' + endColor, durationTim10000)
+
+    print(startDarkCyan + '\nMerge Sort 100,000 numbers time duration in seconds: ' + endColor, durationMerge100000)
+    print(startDarkCyan + 'Quick Sort 100,000 numbers time duration in seconds: ' + endColor, durationQuick100000)
+    print(startDarkCyan + 'Timsort 100,000 numbers time duration in seconds: ' + endColor, durationTim100000)
 
 Main()
