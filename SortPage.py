@@ -11,7 +11,8 @@
 import random
 import time
 import numpy as np
-import pandas as pd
+from sorting_techniques import pysort
+
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
@@ -272,21 +273,50 @@ class Main():
     array100 = np.array(random.sample(range(1, 101), 100))
     print(startBlue + 'Entering 100 numbers into the doubly linked list:\n' + endColor, array100, '\n')
 
+    # Ensuring the list remains the same, by creating a new variable using the list.copy method build into python
+    # reference: https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
+    copiedArray100 = array100.copy()
+
     # 1,000 random numbers
     array1_000 = np.array(random.sample(range(1, 1001), 1000))
     print(startBlue + 'Entering 1,000 numbers into the doubly linked list:\n' + endColor, array1_000, '\n')
+    copiedArray1_000 = array1_000.copy()
 
     # 10,000 random numbers
     array10_000 = np.array(random.sample(range(1, 10001), 10000))
     print(startBlue + 'Entering 10,000 numbers into the doubly linked list:\n' + endColor, array10_000, '\n')
+    copiedArray10_000 = array10_000.copy()
 
     # 100,000 random numbers
     array100_000 = np.array(random.sample(range(1, 100001), 100000))
     print(startBlue + 'Entering 100,000 numbers into the doubly linked list:\n' + endColor, array100_000, '\n')
+    copiedArray100_000 = array100_000.copy()
+
+    # In order to begin sorting the various random numbers using the Pysort library, a variable
+    # is being created
+    # reference: https://pypi.org/project/pysort/
+
+    sortObj = pysort.Sorting()
 
     #-------------------------------------------------------------------------------------------------------------
     # Starting the Phase1, Merge Sort
     print(startGreen + '------------------------------------------------------------' +
           startBold + ' Merge Sort ' + '------------------------------------------------------------' + endColor)
+
+    # Genearting the Sort Result
+    mergeSort100 = sortObj.mergeSort(copiedArray100)
+
+    # The SortResult contains the Sorted List
+
+    print(mergeSort100)
+
+    print(array100)
+    print(copiedArray100)
+    newarray100 = list(array100)
+    print(newarray100)
+    newmergeSort100 = sortObj.mergeSort(newarray100)
+
+    # it appears the method of newarray100 was the best way to actually copy array100, but for some
+    # reason py.copy appears to not be sorting the list properly
 
 Main()
