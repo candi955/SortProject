@@ -9,20 +9,10 @@
 # https://pypi.org/project/pysort/
 # https://www.npmjs.com/package/timsort
 
-
 import random
 import time
 import numpy as np
 from sorting_techniques import pysort
-# in order to utilize the installed timsort, uploaded the 'require' package to use in the code
-import require
-# Appears bower deprecated for timsort install, had started with bower; switching to npm install
-# references: https://www.jetbrains.com/help/pycharm/using-bower-package-manager.html
-# https://libraries.io/bower/timsort
-# In Pycharm IDE terminal:
-# pip install npm
-# npm install --save timsort
-# npm install timsort
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
@@ -342,24 +332,11 @@ class Main():
     # runs "intelligently".  Everything else is complication for speed, and some
     # hard-won measure of memory efficiency.-----
     # reference: https://github.com/python/cpython/blob/master/Objects/listsort.txt
-
-    # To install Timsort in Pycharm IDE, installed in terminal:
-    # npm install -g bower
-    # bower install --save timsort
-    # Appears bower deprecated; switching to npm install
-    # references: https://www.jetbrains.com/help/pycharm/using-bower-package-manager.html
-    # https://libraries.io/bower/timsort
-    # In Pycharm IDE terminal:
-    # pip install npm
-    # npm install --save timsort
-    # npm install timsort
-    # in order to utilize the installed timsort, uploaded the 'require' package to use in the code
-    # import require, shown at top of program
-
+    #
     # Python sort() method utilizes the Timsort algorithm:
     # references: https://www.quora.com/Which-sorting-algorithm-is-used-by-Python-in-the-sort-method
     # https://stackoverflow.com/questions/10948920/what-algorithm-does-pythons-sorted-use
-    #
+    # https://www.programiz.com/python-programming/methods/list/sort
 
     timSort100 = sorted(newArray100, reverse=False)
     print('\nTimsort 100 numbers in order:\n', timSort100)
