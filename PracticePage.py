@@ -11,6 +11,7 @@ import numpy as np
 from sorting_techniques import pysort
 from llist import dllist
 from llist import sllist
+import pandas as pd
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
@@ -341,16 +342,97 @@ class Main():
     #dblListedAgainIloc = dblListedAgainArray.iloc[:, 0]
     #print('dblListedAgain Iloc: ', len(dblListedAgainIloc))
 
+    # merging doubly linked list as splitted string
     merging = sortObj.mergeSort(splittedLinked)
     print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
           endColor + 'the string dbl linked list:\n\n', merging)
     mergingAgain = sortObj.mergeSort(merging)
     mergingAgainArray = np.array(mergingAgain)
     mergingAgainArrayList = list(mergingAgainArray)
+    mergingAgainArrayListMerged = sortObj.mergeSort(mergingAgainArrayList)
+    # merging the doubly linked splitted string list as an array list() also
     print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
-          endColor + 'again in the dbl linked list:\n\n', mergingAgainArrayList)
+          endColor + 'again in the dbl linked list:\n\n', mergingAgainArrayListMerged)
 
-    print("\nColumn")
+    # attempting to turn the arrays of mergingAgainArray into separate columns, then concatenate before
+    # turning into a list
+    mergingAgainArrayDF = pd.DataFrame(mergingAgainArray)
+    print('\nMergingAgainArrayDF dataframe through pandas library: ', mergingAgainArrayDF)
+    mergingAgainArrayDFIloc1 = mergingAgainArrayDF.iloc[:, 0]
+    print('\nColumn 1 of the dataframe: ', mergingAgainArrayDFIloc1)
+    print('\nmore\n')
+    m = mergingAgainArrayDF.iloc[0:101, 0]
+    mDF = pd.DataFrame(m)
+    pd.set_option('display.max_rows', 500)
+    pd.set_option('display.max_columns', 500)
+    pd.set_option('display.width', 1000)
+    print(mDF)
+    # print("\nColumn 1 mergingAgainArray: ", np.concatenate(mergingAgainArrayListMerged))
+
+    #####
+    print('\n\n####### Attempting again with splittedLinkList ######')
+    # attempting to turn the arrays of mergingAgainArray into separate columns, then concatenate before
+    # turning into a list
+    mergingSplittedLinkDF = pd.DataFrame(splittedLinked)
+    print('\nMergingAgainArrayDF dataframe through pandas library: ', mergingSplittedLinkDF)
+    mergingSplittedLinkIloc = mergingSplittedLinkDF.iloc[:, 0]
+    print('\nColumn 1 of the dataframe: ', mergingSplittedLinkIloc)
+    print('\nmore\n')
+    m2 = mergingSplittedLinkDF.iloc[0:101, 0]
+    m2DF = pd.DataFrame(m)
+    pd.set_option('display.max_rows', 500)
+    pd.set_option('display.max_columns', 500)
+    pd.set_option('display.width', 1000)
+    print(m2DF)
+    # print("\nColumn 1 mergingAgainArray: ", np.concatenate(mergingAgainArrayListMerged))
+
+    c = mergingSplittedLinkDF.iloc[:, 0]
+    print('\n\n', c, '\n\n')
+    d = mergingSplittedLinkDF.head()
+    print('\n\n', d, '\n\n')
+    # e = mergingSplittedLinkDF.
+    # print('\n\n', e, '\n\n')
+    f = str(c)
+    g = list(f)
+
+
+    # merging doubly linked list as splitted string
+    merging = sortObj.mergeSort(g)
+    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
+          endColor + 'the the iloc 0 of a split linked list:\n\n', merging)
+
+    print('-------------------------------------------------------')
+
+    linking = DoublyLinkedList()
+    rNums100 = np.array(random.sample(range(1, 101), 100))
+    linking.insert_in_emptylist(rNums100)
+    linking.traverse_list()
+    print('hello')
+    list = np.array(linking.traverse_list())
+    print('blah')
+    print(list)
+    print('blahblahblah')
+    # merging doubly linked list as splitted string
+    data = []
+    data2 = np.array(linking.traverse_list())
+    datalist= data2.tolist()
+    print(data2.size)
+    newdata = np.array(linking.traverse_list())
+    newdataDF = pd.DataFrame(newdata)
+    newerdata = newdataDF.iloc[1:, 0]
+    print('weasel')
+    print(newdataDF)
+
+    print('whoohooo')
+    merging = sortObj.mergeSort(newdata)
+    print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
+          endColor + 'the the iloc 0 of a split linked list:\n\n', merging)
+
+
+
+
+
+
 
 
 
