@@ -1,9 +1,17 @@
-# Program for merge sort on doubly linked list
+# Code won't complete run: receive the error:
+# RecursionError: maximum recursion depth exceeded while calling a Python object
+# I knew this could be an issue due to the memory it takes to run merge
+# reference: https://stackoverflow.com/questions/23578541/python-recursion-test-in-pycharm-process-finished-with-exit-code-139
+
+# -------------------------------------------------------------------------------------------------------------------
+# Program for merge sort on doubly linked list 10,000 random numbers
 # reference: https://www.geeksforgeeks.org/merge-sort-for-doubly-linked-list/
 
 import numpy as np
 import random
 import time
+import sys
+sys.setrecursionlimit(100000)
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
@@ -125,34 +133,30 @@ class DoublyLinkedList:
         #while (temp):
             #print(temp.data)
             #temp = temp.prev
-        
+
 # reference: https://www.geeksforgeeks.org/merge-sort-for-doubly-linked-list/
 
-dll = DoublyLinkedList()
-
 print(startBlue +
-      '------------------------------------------- Merge Sort 100 items -------------------------------------------' +
+      '------------------------------------------ Merge Sort 10,000 items ------------------------------------------' +
       endColor)
 
-for item in range(100):
-    randomNum = np.array(random.sample(range(1, 101), 1))
-    dll.push(randomNum)
+dll3 = DoublyLinkedList()
 
-print("\nDoubly linked list after 100 numbers added:\n")
+for item in range(10000):
+    randomNum10_000 = np.array(random.sample(range(1, 10001), 1))
+    dll3.push(randomNum10_000)
 
-start100 = time.time()
-dll.head = dll.mergeSort(dll.head)
-print(startRed + ' ------------------------------------- ' + endColor)
-end100 = time.time()
-duration100 = end100 - start100
+start10_000 = time.time()
+dll3.head = dll3.mergeSort(dll3.head)
+end10_000 = time.time()
+duration10_000 = end10_000 - start10_000
+print(startRed + "Duration in seconds: " + endColor)
+print(duration10_000)
 
 print("Linked List after sorting")
-dll.printList(dll.head)
+dll3.printList(dll3.head)
 
-
-print(startBlue +
-      '------------------------------------------ Merge Sort 1,000 items ------------------------------------------' +
-      endColor)
-
-
-
+# Code won't complete run: receive the error:
+# # RecursionError: maximum recursion depth exceeded while calling a Python object
+# # I knew this could be an issue due to the memory it takes to run merge
+# # reference: https://stackoverflow.com/questions/23578541/python-recursion-test-in-pycharm-process-finished-with-exit-code-139
