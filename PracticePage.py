@@ -34,14 +34,15 @@ print('\nRandom numbers as a list:\n', randomNumsAsList)
 lst = dllist([randomNums100])
 print('\nDoubly linked list:\n', lst)
 
-listed = list(lst)
-print('\nDoubly linked list copied to list():\n', listed)
+listedAgain = lst.nodeat(0)
+print(startBlue + '\nlistedAgain:' + endColor, listedAgain)
 
 sortObj = pysort.Sorting()
-mergeSort100 = sortObj.mergeSort(listed)
+mergeSort100 = sortObj.mergeSort(randomNums100)
 
-timSort100 = sorted(listed, reverse=False)
+timSort100 = sorted(randomNums100, reverse=False)
 print(startPurple + startBold + '\nTimsort 100 numbers:\n' + endColor, timSort100)
 
 print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
       endColor + 'the newarray100 list:\n\n', mergeSort100)
+
