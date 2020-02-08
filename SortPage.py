@@ -315,6 +315,9 @@ class Main():
 
     # Sorting the new array with Pysort package Merge Sort
     # reference: https://pypi.org/project/pysort/
+    # Divides list into a left and right index, breaks those up into smallest units and then sorts by
+    # merging it back to order from that breakdown
+    # reference for definition of merge sort: https://www.youtube.com/watch?v=JSceec-wEyw
     startMerge100 = time.time()
     newmergeSort100 = sortObj.mergeSort(newArray100)
     print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
@@ -326,6 +329,10 @@ class Main():
     # in the parameters
     # references: https://pypi.org/project/pysort/
     # https://www.geeksforgeeks.org/quick-sort/
+    # Finds element called Pivot, divides the aray into two halves (left half smaller value, right half larger value).
+    # The pivot is brought to appropriate position (left-smaller, right-greater), the left is quick sorted, then the
+    # right quick-sorted.
+    # reference for definition of quicksort: https://www.youtube.com/watch?v=PgBzjlCcFvc
     startQuick100 = time.time()
     newmergeSort100 = sortObj.quickSort(newArray100, 0, 99)
     print('\nUsing the Pysort package to ' + startCyan + startBold + 'Quick Sort 100 numbers ' +
@@ -346,7 +353,10 @@ class Main():
     # references: https://www.quora.com/Which-sorting-algorithm-is-used-by-Python-in-the-sort-method
     # https://stackoverflow.com/questions/10948920/what-algorithm-does-pythons-sorted-use
     # https://www.programiz.com/python-programming/methods/list/sort
-
+    # a hybrid sort that uses binary insertion sort and merge sort, and modifies them for
+    # optimal results
+    # reference for definition of timsort:
+    # https://www.youtube.com/watch?v=_dlzWEJoU7I
     startTim100 = time.time()
     timSort100 = sorted(newArray100, reverse=False)
     print(startPurple + startBold + '\nTimsort 100 numbers in order:\n' + endColor, timSort100)
