@@ -3,6 +3,7 @@
 # https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.tolist.html
 # https://ajakubek.github.io/python-llist/index.html
 # https://pypi.org/project/llist/
+# https://stackoverflow.com/questions/54780632/python-converting-a-linked-list-to-a-list-using-a-list-comprehension
 
 import random
 import time
@@ -30,16 +31,17 @@ print('\nRandom numbers:\n', randomNums100)
 randomNumsAsList = randomNums100.tolist()
 print('\nRandom numbers as a list:\n', randomNumsAsList)
 
-lst = sllist([randomNums100])
-print('\nSingly linked list:\n', lst)
-
-listToList = lst.tolist()
+lst = dllist([randomNums100])
+print('\nDoubly linked list:\n', lst)
 
 listed = list(lst)
-print('\nSingly linked list copied to list():\n', listed)
+print('\nDoubly linked list copied to list():\n', listed)
 
 sortObj = pysort.Sorting()
 mergeSort100 = sortObj.mergeSort(listed)
+
+timSort100 = sorted(listed, reverse=False)
+print(startPurple + startBold + '\nTimsort 100 numbers:\n' + endColor, timSort100)
 
 print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
       endColor + 'the newarray100 list:\n\n', mergeSort100)
