@@ -417,23 +417,21 @@ class Main():
     data2 = np.array(linking.traverse_list())
     datalist= data2.tolist()
     print(data2.size)
-    newdata = np.array(linking.traverse_list())
+    newdata = np.array([linking.traverse_list()])
+    #---------------------------------------------------------------------
     newdataDF = pd.DataFrame(newdata)
-    newerdata = newdataDF.iloc[1:, 0]
+    newerdata = newdataDF.iloc[:, 0]
+    newerdataarray = np.array(newerdata)
+
     print('weasel')
-    print(newdataDF)
+    print(data2)
 
     print('whoohooo')
-    merging = sortObj.mergeSort(newdata)
+    merging = sortObj.quickSort(m, 1, 100)
     print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
           endColor + 'the the iloc 0 of a split linked list:\n\n', merging)
 
 
-
-
-
-
-
-
+    print(m.appendleft(585))
 
 Main()

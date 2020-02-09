@@ -52,6 +52,11 @@ class DoublyLinkedList:
         if second is None:
             return first
 
+        while first.next == None:
+            first = first.next
+            return first
+
+
             # Pick the smaller value
         if first.data < second.data:
             first.next = self.merge(first.next, second)
