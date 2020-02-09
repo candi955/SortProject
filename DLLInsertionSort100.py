@@ -4,6 +4,7 @@
 import numpy as np
 import random
 import time
+from sorting_techniques import pysort
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
@@ -30,7 +31,6 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-
 
 # function to sort a singly linked list using insertion sort
 def insertionSort(head_ref):
@@ -114,26 +114,46 @@ def push(head_ref, new_data):
 print(startBlue +
       '------------------------ Insertion Sort 100 items Singly Linked List-------------------------' +
       endColor)
-SLL = None
 
-for item in range(100):
-    # Placing 100 random numbers into the singly linked list and assigning a variable
-    randomNum = np.array(random.sample(range(1, 101), 1))
-    SLL = push(SLL, randomNum)
-    print(SLL.data)
+# Driver program to test above functions
+a = None
 
-print("\nSingly linked list before sorting:\n")
-print(SLL.data)
+rand100 = np.array(random.sample(range(1, 101), 100))
+rand100list = list(rand100)
+a = push(a, rand100list)
 
-print("\nSingly linked list after sorting:\n")
-start100 = time.time()
-SLL = insertionSort(SLL)
-end100 = time.time()
-duration100 = end100 - start100
-print(SLL.data)
+print(a)
 
-print(startRed + "\nTime duration of Insertion Sort (Singly linked list), 100 random numbers, in seconds:\n" + endColor)
-print(duration100)
+
+print("Linked List before sorting ")
+printList(a)
+
+a = insertionSort(a)
+
+print("\nLinked List after sorting ")
+printList(a)
+aArray = np.array(a)
+# reference: https://stackoverflow.com/questions/21198602/typeerror-iteration-over-a-0-d-array-using-numpy?rq=1
+#aArrayList = np.array(list(aArray.item()))
+#print("aArray:\n")
+#print(aArrayList)
+
+# reference: https://stackoverflow.com/questions/38789552/python-typeerror-treenode-object-is-not-iterable
+for item in a:
+    if item != None:
+        a = '{}'.format(item.delete)
+    else:
+        a = '{}'
+print(a)
+
+
+timSort10000 = sorted(newa, reverse=False)
+print(startPurple + startBold + '\nTimsort 10,000 numbers in reverse:\n' + endColor, timSort10000)
+
+sortObj = pysort.Sorting()
+merging = sortObj.quickSort(a, 1, 99)
+print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
+      endColor + 'the the iloc 0 of a split linked list:\n\n', merging)
 
 
 
