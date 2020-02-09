@@ -107,48 +107,32 @@ def push(head_ref, new_data):
     (head_ref) = new_node
     return head_ref
 
-
-# Driver program to test above functions
-
-a = None
-a = push(a, 5)
-a = push(a, 20)
-a = push(a, 4)
-a = push(a, 3)
-a = push(a, 30)
-
-print("Linked List before sorting ")
-printList(a)
-
-a = insertionSort(a)
-
-print("\nLinked List after sorting ")
-printList(a)
-
 # This code is contributed by Arnab Kundu
-
-
 # reference: https://www.geeksforgeeks.org/insertion-sort-for-singly-linked-list/
 
 
 print(startBlue +
-      '------------------------------------------- Merge Sort 100 items -------------------------------------------' +
+      '------------------------ Insertion Sort 100 items Singly Linked List-------------------------' +
       endColor)
-dll = DoublyLinkedList()
+SLL = None
 
 for item in range(100):
+    # Placing 100 random numbers into the singly linked list and assigning a variable
     randomNum = np.array(random.sample(range(1, 101), 1))
-    dll.push(randomNum)
+    SLL = push(SLL, randomNum)
+    print(SLL.data)
 
+print("\nSingly linked list before sorting:\n")
+print(SLL.data)
+
+print("\nSingly linked list after sorting:\n")
 start100 = time.time()
-dll.head = dll.mergeSort(dll.head)
+SLL = insertionSort(SLL)
 end100 = time.time()
 duration100 = end100 - start100
+print(SLL.data)
 
-print("\nLinked List after sorting\n")
-dll.printList(dll.head)
-
-print(startRed + "\nTime duration of Merge Sort, 100 random numbers, in seconds:\n" + endColor)
+print(startRed + "\nTime duration of Insertion Sort (Singly linked list), 100 random numbers, in seconds:\n" + endColor)
 print(duration100)
 
 
