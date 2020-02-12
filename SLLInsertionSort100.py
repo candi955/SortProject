@@ -1,4 +1,4 @@
-# Program for insertion sort on doubly linked list 100 random numbers
+# Program for insertion sort on singly linked list 100 random numbers
 # reference: https://www.geeksforgeeks.org/insertion-sort-for-singly-linked-list/
 
 import numpy as np
@@ -20,9 +20,9 @@ startGreen = '\033[92m'
 startYellow = '\033[93m'
 startRed = '\033[91m'
 
-# A node of the doubly linked list
+# A node of the singly linked list
 # reference: https://www.geeksforgeeks.org/insertion-sort-for-singly-linked-list/
-# Python implmentation of above algorithm
+# Python implementation of above algorithm
 
 # Node class
 class Node:
@@ -147,13 +147,13 @@ for item in a:
 print(a)
 
 
-timSort10000 = sorted(newa, reverse=False)
-print(startPurple + startBold + '\nTimsort 10,000 numbers in reverse:\n' + endColor, timSort10000)
+#timSort10000 = sorted(a, reverse=False)
+#print(startPurple + startBold + '\nTimsort 10,000 numbers in reverse:\n' + endColor, timSort10000)
 
-sortObj = pysort.Sorting()
-merging = sortObj.quickSort(a, 1, 99)
-print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
-      endColor + 'the the iloc 0 of a split linked list:\n\n', merging)
+#sortObj = pysort.Sorting()
+#merging = sortObj.quickSort(a, 1, 99)
+#print('\nUsing the Pysort package to ' + startPurple + startBold + 'Merge Sort 100 numbers ' +
+#      endColor + 'the the iloc 0 of a split linked list:\n\n', merging)
 
 
 

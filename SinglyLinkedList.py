@@ -114,7 +114,7 @@ def bubbleSortLinkedList(LL):
 
 
 sortObj = pysort.Sorting()
-merging = sortObj.quickSort(LL, 0, 4)
+merging = sortObj.bubbleSort(LL)
 print('\nUsing the Pysort package to ' + startPurple + startBold + 'Quick Sort 100 numbers ' +
       endColor + ':\n\n', merging)
 
