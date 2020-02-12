@@ -1,7 +1,15 @@
 # Program for Timsort on doubly linked list 100 random numbers
+
+# Disclaimer: Program originated from Joe Jame's Youtube video and Github listed in the references below.
+# The only part of the program that is mine, is the implementation of the program sorting large amounts of
+# random numbers for output at the end of the program.
+
 # reference: https://www.youtube.com/watch?v=Xk0Tgh1AbfE
 # reference: https://github.com/joeyajames/Python/tree/master/LinkedLists
 # reference: https://github.com/joeyajames/Python/blob/master/LinkedLists/LinkedList1.py
+# reference: https://docs.python.org/3/howto/sorting.html
+# reference: https://en.wikipedia.org/wiki/Timsort
+
 
 import numpy as np
 import random
@@ -128,11 +136,10 @@ class LinkedList(object):
             return newll;
         return self;
 
-
 myList = LinkedList()
 
 for item in range(100):
-    randomNum = np.array(random.sample(range(1, 1001), 1))
+    randomNum = np.array(random.sample(range(1, 101), 1))
     myList.add(randomNum)
 
 print("\n\nBefore sorting:")
