@@ -1,4 +1,4 @@
-# Program for Timsort on doubly linked list 100 random numbers
+# Program for Timsort on doubly linked list 10,000 random numbers
 
 # Disclaimer: Program originated from Joe Jame's Youtube video and Github listed in the references below.
 # The only part of the program that is mine, is the implementation of the program sorting large amounts of
@@ -134,26 +134,28 @@ class LinkedList(object):
             return newll;
         return self;
 
+
 print(startBlue +
-      '------------------------------------------- Timsort 100 items -------------------------------------------' +
+      '------------------------------------------- Timsort 10,000 items -------------------------------------------' +
       endColor)
 
 myList = LinkedList()
 
-for item in range(100):
-    randomNum = np.array(random.sample(range(1, 101), 1))
+for item in range(10000):
+    randomNum = np.array(random.sample(range(1, 10001), 1))
     myList.add(randomNum)
 
 print("\n\nBefore sorting:")
 myList.print_list()
 
-print("\n\n100 Random numbers in a linked list, sorted using the Timsort method:")
-start100 = time.time()
+print("\n\n10,000 Random numbers in a linked list, sorted using the Timsort method:")
+start10000 = time.time()
 myList.sort()
-end100 = time.time()
-duration100 = end100 - start100
+end10000 = time.time()
+duration10000 = end10000 - start10000
 
 myList.print_list()
 
-print(startRed + "\n\nTime duration of Timsort, 100 random numbers, in seconds:\n" + endColor)
-print(duration100)
+print(startRed + "\n\nTime duration of Timsort, 10,000 random numbers, in seconds:\n" + endColor)
+print(duration10000)
+

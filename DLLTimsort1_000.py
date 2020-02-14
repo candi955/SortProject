@@ -13,7 +13,6 @@
 import numpy as np
 import random
 import time
-from sorting_techniques import pysort
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
@@ -134,6 +133,10 @@ class LinkedList(object):
                 newll.add_node(node);
             return newll;
         return self;
+
+print(startBlue +
+      '------------------------------------------- Timsort 1,000 items -------------------------------------------' +
+      endColor)
 
 myList = LinkedList()
 
