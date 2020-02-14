@@ -10,12 +10,11 @@
 # reference: https://docs.python.org/3/howto/sorting.html
 # reference: https://en.wikipedia.org/wiki/Timsort
 
-
 import numpy as np
 import random
 import time
 from sorting_techniques import pysort
-
+3
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
 endColor = "\033[0m"

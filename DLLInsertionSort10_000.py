@@ -1,4 +1,4 @@
-# Program for insertion sort on doubly linked list 1,000 random numbers
+# Program for insertion sort on doubly linked list 10,000 random numbers
 # reference: https://www.geeksforgeeks.org/insertion-sort-doubly-linked-list/
 
 import numpy as np
@@ -143,7 +143,7 @@ def push(head_ref, new_data):
 # Driver Code
 
 print(startBlue +
-      '------------------------------------------- Insertion Sort 1,000 items -------------------------------------------' +
+      '------------------------------------------- Insertion Sort 10,000 items -------------------------------------------' +
       endColor)
 if __name__ == "__main__":
     """ start with the empty doubly linked list """
@@ -152,22 +152,22 @@ if __name__ == "__main__":
     # reference: https://www.geeksforgeeks.org/insertion-sort-doubly-linked-list/
     # This code is contributed by Arnab Kundu
 
-    for item in range(1000):
-        randomNum = np.array(random.sample(range(1, 1001), 1))
+    for item in range(10000):
+        randomNum = np.array(random.sample(range(1, 10001), 1))
         head = push(head, randomNum)
 
     print("Doubly Linked List Before Sorting")
     printList(head)
 
-    start1000 = time.time()
+    start10000 = time.time()
     head = insertionSort(head)
-    end1000 = time.time()
-    duration1000 = end1000 - start1000
+    end10000 = time.time()
+    duration10000 = end10000 - start10000
 
     print("\nDoubly Linked List After Sorting")
     printList(head)
 
-    print(startRed + "\n\nTime duration of Insertion Sort, 100 random numbers, in seconds:\n" + endColor)
-    print(duration1000)
+    print(startRed + "\n\nTime duration of Insertion Sort, 10,000 random numbers, in seconds:\n" + endColor)
+    print(duration10000)
 
 
