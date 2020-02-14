@@ -137,21 +137,21 @@ class LinkedList(object):
 
 myList = LinkedList()
 
-for item in range(100):
-    randomNum = np.array(random.sample(range(1, 101), 1))
+for item in range(1000):
+    randomNum = np.array(random.sample(range(1, 1001), 1))
     myList.add(randomNum)
 
 print("\n\nBefore sorting:")
 myList.print_list()
 
-print("\n\n100 Random numbers in a linked list, sorted using the Timsort method:")
-start100 = time.time()
+print("\n\n1,000 Random numbers in a linked list, sorted using the Timsort method:")
+start1000 = time.time()
 myList.sort()
-end100 = time.time()
-duration100 = end100 - start100
+end1000 = time.time()
+duration1000 = end1000 - start1000
 
 myList.print_list()
 
-print(startRed + "\n\nTime duration of Timsort, 100 random numbers, in seconds:\n" + endColor)
-print(duration100)
+print(startRed + "\n\nTime duration of Timsort, 1,000 random numbers, in seconds:\n" + endColor)
+print(duration1000)
 
