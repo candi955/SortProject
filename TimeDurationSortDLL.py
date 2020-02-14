@@ -1,5 +1,17 @@
 # Time Duration Page for Sorting Doubly Linked Lists (Merge Sort, Insertion Sort, and Tim Sort)
 
+# Side notes:
+# Due to memory issues Merge Sort for DLL would show error for 10,000 and 100,000 numbers.  I used the initial
+# number difference of approximately two times the difference between the time duration for 100 and 1,000 random
+# number processing to calculate approximate values for the higher numbers that could not be completed currently.
+
+# Similarly, I had to approximate the value for Insertion Sort DLL 100,000 number processing duration, due to the
+# length of time it was taking to process. From 100 to 1,000 numbers, the increase in time duration
+# was approximately 76 times , and for the time duration between 1,000 and 10,000 random numbers,
+# approximatley 109 times, 33 more times than before.  I will use the similar approximation of 109 + 33,
+# or 142 times in order to come up with the final time duration for Insertion Sort DLL of 100,000 numbers.
+# My finding is that it would have taken approximatly an hour to complete the sort for 100,000 random numbers.
+
 # Pandas table and Matplotlib line plot
 
 # Comparing time durations of the Merge Sort, Insertion Sort, and Timsort functions in python for 100, 1000, 10000, and
@@ -19,7 +31,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Creating a variable for data being pulled from the TimeDurationComparisonSortDLL.xlsx file and placed into array format
-book = xlrd.open_workbook('TimeDurationComparisonSortDLL')
+book = xlrd.open_workbook('TimeDurationComparisonSortDLL.xlsx')
 sheets = book.sheets()
 for sheet in sheets:
     data = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
