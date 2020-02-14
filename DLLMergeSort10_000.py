@@ -1,5 +1,7 @@
 # Code won't complete run: receive the error:
 # RecursionError: maximum recursion depth exceeded while calling a Python object
+# Process finished with exit code -1073741571 (0xC00000FD)
+
 # I knew this could be an issue due to the memory it takes to run merge
 # reference: https://stackoverflow.com/questions/23578541/python-recursion-test-in-pycharm-process-finished-with-exit-code-139
 
