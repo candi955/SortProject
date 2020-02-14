@@ -5,8 +5,17 @@
 # I knew this could be an issue due to the memory it takes to run merge
 # reference: https://stackoverflow.com/questions/23578541/python-recursion-test-in-pycharm-process-finished-with-exit-code-139
 
-# Reference of correction to possibly try:
+# Reference of correction to possibly try; I had an issue making it function on the Pycharm IDE, however:
 # https://github.com/explosion/spaCy/issues/799
+
+# Merge Sort - Breaking the list down into smaller lists, and checking if the smaller lists are sorted; then
+# merging the lists back together by comparing the elements on those lists.
+# It is a recursive method (calls on itself), and is considered to be efficient for larger datasets.
+# Logs n as looks at every element, and merge steps double the list size. ('n' work for the merge steps, then
+# log 'n' merge steps). Runs O(n log n)
+# Reference: https://www.youtube.com/watch?v=Nso25TkBsYI&feature=emb_rel_pause
+# Can require a lot of memory to allocation of memory size of input for the sorted output to be stored in
+# Reference: https://en.wikipedia.org/wiki/Merge_sort
 
 # -------------------------------------------------------------------------------------------------------------------
 # Program for merge sort on doubly linked list 10,000 random numbers

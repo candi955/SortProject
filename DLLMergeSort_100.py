@@ -1,6 +1,15 @@
 # Program for merge sort on doubly linked list 100 random numbers
 # reference: https://www.geeksforgeeks.org/merge-sort-for-doubly-linked-list/
 
+# Merge Sort - Breaking the list down into smaller lists, and checking if the smaller lists are sorted; then
+# merging the lists back together by comparing the elements on those lists.
+# It is a recursive method (calls on itself), and is considered to be efficient for larger datasets.
+# Logs n as looks at every element, and merge steps double the list size. ('n' work for the merge steps, then
+# log 'n' merge steps). Runs O(n log n)
+# Reference: https://www.youtube.com/watch?v=Nso25TkBsYI&feature=emb_rel_pause
+# Can require a lot of memory to allocation of memory size of input for the sorted output to be stored in
+# Reference: https://en.wikipedia.org/wiki/Merge_sort
+
 import numpy as np
 import random
 import time
