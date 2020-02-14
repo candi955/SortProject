@@ -4,6 +4,15 @@
 # The only part of the program that is mine, is the implementation of the program sorting large amounts of
 # random numbers for output at the end of the program.
 
+# Timsort - A hybrid sorting algorithm that utilizes the concepts of merge sort and insertion sort, while checking
+# the speed of various sort options proportionally to list size and how they efficiently sort a list, while sorting.
+# It is sort of a self-induced A/B Test within the algorithm itself.
+# References: https://en.wikipedia.org/wiki/Timsort
+# https://www.geeksforgeeks.org/timsort/
+# This particular code from Joe James utilizes a lambda function from the Python sorted() library as part of its
+# implementation.
+# Reference: https://docs.python.org/3/howto/sorting.html
+
 # reference: https://www.youtube.com/watch?v=Xk0Tgh1AbfE
 # reference: https://github.com/joeyajames/Python/tree/master/LinkedLists
 # reference: https://github.com/joeyajames/Python/blob/master/LinkedLists/LinkedList1.py
@@ -133,6 +142,7 @@ class LinkedList(object):
                 newll.add_node(node);
             return newll;
         return self;
+        # reference: https://github.com/joeyajames/Python/blob/master/LinkedLists/LinkedList1.py
 
 
 print(startBlue +
