@@ -1,4 +1,4 @@
-# Program for Timsort on doubly linked list 100 random numbers
+# Program for Timsort on doubly linked list 1,000 random numbers
 
 # Disclaimer: Program originated from Joe Jame's Youtube video and Github listed in the references below.
 # The only part of the program that is mine, is the implementation of the program sorting large amounts of
@@ -154,3 +154,4 @@ myList.print_list()
 
 print(startRed + "\n\nTime duration of Timsort, 100 random numbers, in seconds:\n" + endColor)
 print(duration100)
+
