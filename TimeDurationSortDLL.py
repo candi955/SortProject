@@ -98,7 +98,7 @@ class Regression():
         fig, ax = plt.subplots()
 
         ax.plot(rowLabels_ForData, mergeSortData, label="Merge Sort DLL")
-        ax.plot(rowLabels_ForData, insertionSortData, label="Quick Sort DLL")
+        ax.plot(rowLabels_ForData, insertionSortData, label="Insertion Sort DLL")
         ax.plot(rowLabels_ForData, timSortData, label="Timsort DLL")
         ax.legend()
 

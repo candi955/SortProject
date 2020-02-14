@@ -152,19 +152,19 @@ print(startBlue +
       '------------------------------------------ Merge Sort 1,000 items ------------------------------------------' +
       endColor)
 
-dll2 = DoublyLinkedList()
+dll = DoublyLinkedList()
 
 for item in range(1000):
     randomNum1_000 = np.array(random.sample(range(1, 1001), 1))
-    dll2.push(randomNum1_000)
+    dll.push(randomNum1_000)
 
 start1_000 = time.time()
-dll2.head = dll2.mergeSort(dll2.head)
+dll.head = dll.mergeSort(dll.head)
 end1_000 = time.time()
 duration1_000 = end1_000 - start1_000
 
 print("Linked List after sorting")
-dll2.printList(dll2.head)
+dll.printList(dll.head)
 
 print(startRed + "\nTime duration of Merge Sort, 1,000 random numbers, in seconds:\n" + endColor)
 print(duration1_000)
