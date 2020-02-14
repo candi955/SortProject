@@ -1,6 +1,12 @@
 # Program for insertion sort on doubly linked list 10,000 random numbers
 # reference: https://www.geeksforgeeks.org/insertion-sort-doubly-linked-list/
 
+# Insertion sort - moves all values less than other values over by comparing them one at a time to other values
+# Is considered useful for datasets smaller than 10,000 elements
+# Big O is O(n^2)
+# reference: https://www.google.com/search?q=how+does+insertion+sort+work+python&oq=how+does+insertion+sort+work+python&aqs=chrome..69i57j0.6631j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_XkZGXoGwL4bc-gTMpIfwDQ33
+
+
 import numpy as np
 import random
 import time
