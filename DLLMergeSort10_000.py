@@ -3,6 +3,9 @@
 # I knew this could be an issue due to the memory it takes to run merge
 # reference: https://stackoverflow.com/questions/23578541/python-recursion-test-in-pycharm-process-finished-with-exit-code-139
 
+# Reference of correction to possibly try:
+# https://github.com/explosion/spaCy/issues/799
+
 # -------------------------------------------------------------------------------------------------------------------
 # Program for merge sort on doubly linked list 10,000 random numbers
 # reference: https://www.geeksforgeeks.org/merge-sort-for-doubly-linked-list/
@@ -11,7 +14,7 @@ import numpy as np
 import random
 import time
 import sys
-sys.setrecursionlimit(100000)
+sys.setrecursionlimit(200000)
 
 # Using the color class in python, in assigned variable form, to make the headings bold, underline, and various colors
 # reference: https://stackoverflow.com/questions/8924173/how-do-i-print-bold-text-in-python
