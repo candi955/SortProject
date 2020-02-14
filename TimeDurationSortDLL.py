@@ -1,8 +1,8 @@
-# Time Duration Page for Sorting Arrays (Merge Sort, Quick Sort, and Tim Sort)
+# Time Duration Page for Sorting Doubly Linked Lists (Merge Sort, Insertion Sort, and Tim Sort)
 
 # Pandas table and Matplotlib line plot
 
-# Comparing time durations of the Merge Sort, Quick Sort, and Timsort functions in python for 100, 1000, 10000, and
+# Comparing time durations of the Merge Sort, Insertion Sort, and Timsort functions in python for 100, 1000, 10000, and
 # 100000 random numbers.
 
 # Main reference for the Matplotlip plot on this page:
@@ -18,8 +18,8 @@ import xlrd
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Creating a variable for data being pulled from the TimeDurationComparisonArray.xlsx file and placed into array format
-book = xlrd.open_workbook('TimeDurationComparisonArray.xlsx')
+# Creating a variable for data being pulled from the TimeDurationComparisonSortDLL.xlsx file and placed into array format
+book = xlrd.open_workbook('TimeDurationComparisonSortDLL')
 sheets = book.sheets()
 for sheet in sheets:
     data = np.array([[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)])
@@ -31,21 +31,21 @@ timeduration_df = pd.read_excel(book, index_col=None,
 class Regression():
     def _showTable_(self):
 
-        # Showing the data that was pulled from TimeDurationComparisonArray.xlsx in array form
+        # Showing the data that was pulled from TimeDurationComparisonSortDLL.xlsx in array form
         print("\n\nData pulled from the excel file:\n\n", data, "\n\n")
 
         # Obtaining the shape of the data
         print("Data shape: ", data.shape, "\n\n")
         # Data shape:  (9, 4)
 
-        # Showing the data that was pulled from TimeDurationComparisonArray.xlsx in excel form
+        # Showing the data that was pulled from TimeDurationComparisonSortDLL.xlsx in excel form
         print("Data put into excel format:\n\n", timeduration_df, "\n\n")
 
     # Reference for plot:
     # https: // matplotlib.org / gallery / lines_bars_and_markers / categorical_variables.html  # sphx-glr-gallery-lines-bars-and-markers-categorical-variables-py
     def _showPlot_(self):
 
-        # Attempting to create a table and plot chart of the dataframe TimeDurationComparisonArray.xlsx
+        # Attempting to create a table and plot chart of the dataframe TimeDurationComparisonSortDLL.xlsx
         # using iloc (row and column slicing) for python, references:
         # https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
         # https://datacarpentry.org/python-ecology-lesson/03-index-slice-subset/
@@ -59,8 +59,8 @@ class Regression():
         print("Mergesort column: \n", mergeSortData, "\n")
 
         # 2nd data column, the Quick Sort column
-        quickSortData = timeduration_df.iloc[:, 2]
-        print("Quicksort column: \n", quickSortData, "\n")
+        insertionSortData = timeduration_df.iloc[:, 2]
+        print("Quicksort column: \n", insertionSortData, "\n")
 
         # 3rd data column, the Tim Sort column
         timSortData = timeduration_df.iloc[:, 3]
@@ -85,9 +85,9 @@ class Regression():
 
         fig, ax = plt.subplots()
 
-        ax.plot(rowLabels_ForData, mergeSortData, label="Merge Sort")
-        ax.plot(rowLabels_ForData, quickSortData, label="Quick Sort")
-        ax.plot(rowLabels_ForData, timSortData, label="Timsort")
+        ax.plot(rowLabels_ForData, mergeSortData, label="Merge Sort DLL")
+        ax.plot(rowLabels_ForData, insertionSortData, label="Quick Sort DLL")
+        ax.plot(rowLabels_ForData, timSortData, label="Timsort DLL")
         ax.legend()
 
         # x and y axis labels
@@ -95,8 +95,8 @@ class Regression():
         plt.ylabel("Amount of Time Duration in Seconds\n")
 
         # The top title (suptitle) and title descriptor(title)
-        plt.suptitle("Duration in Seconds of Sort Functionality in Python")
-        plt.title("\nMerge Sort, Quick Sort, and Timsort")
+        plt.suptitle("Duration in Seconds of Sort Doubly Linked Lists in Python")
+        plt.title("\nMerge Sort, Insertion Sort, and Timsort")
 
         plt.show()
 
