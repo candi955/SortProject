@@ -1,3 +1,6 @@
+# This code (for Insertion Sort of 100,000 random numbers in a doubly linked list), takes a long time to produce
+# output. 
+
 # Program for Timsort on doubly linked list 100,000 random numbers
 
 # Disclaimer: Program originated from Joe Jame's Youtube video and Github listed in the references below.
